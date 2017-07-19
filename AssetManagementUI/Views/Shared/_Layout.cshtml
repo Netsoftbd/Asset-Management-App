@@ -6,14 +6,138 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width" />
         <title>@ViewBag.Title - App</title>
+        @Styles.Render("~/BaseDesign/css")
         @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/head")
     </head>
-<body>
-    <div>
-        @RenderBody()
-    </div>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~bundles/bootstrap")
-    @RenderSection("scripts", required:false)
-</body>
+    <body class="no-skin">
+        <div id="navbar" class="navbar navbar-default">
+            <div class="navbar-container" id="navbar-container">
+                <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+                    <span class="sr-only">Toggle Sidebar</span>
+                    
+                    <span class="icon-bar"></span>
+                    
+                    <span class="icon-bar"></span>
+                    
+                    <span class="icon-bar"></span>
+                </button>
+                
+                <div class="navbar-header pull-left">
+                    <a href="#" class="navbar-brand">
+                        <small>
+                            <i class="fa fa-leaf"></i>
+                            Netsoft Bd
+                        </small>
+                    </a>
+                </div>
+                
+                <div class="navbar-buttons navbar-header pull_right" role="navigation">
+                    <ul class="nav ace-nav">
+                        <li class="light-blue dropdown-modal">
+                            <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                                <img class="nav-user-photo" src="~/BaseDesignAssets/images/avatars/user.jpg" alt="User's Photo'" />
+                                <span class="user-info">
+                                    <small>Welcome,</small>
+                                </span>
+                                
+                                <i class="ace-icon fa fa-caret-down"></i>
+                            </a>
+                            
+                            <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                                <li>
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-cog"></i>
+                                        Settings
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-user"></i>
+                                        Profile
+                                    </a>
+                                </li>
+                                
+                                <li class="divider"></li>
+                                
+                                <li>
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-power-off"></i>
+                                        Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- /.navbar-container -->
+        </div>
+        
+        
+        <div class="main-container" id="main-container">
+            <script type="text/javascript">
+                try {
+                    ace.settings.loadState('main-container');
+                } catch (e) {
+
+                } 
+            </script>
+            
+            <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+                <div class="sidebar-shortcuts-large" id="sidebar-shortcute-large">
+                    <button class="btn btn-success">
+                        <i class="ace-icon fa fa-signal"></i>
+                    </button>
+
+                    <button class="btn btn-info">
+                        <i class="ace-icon fa fa-pencil"></i>
+                    </button>
+
+                    <button class="btn btn-warning">
+                        <i class="ace-icon fa fa-users"></i>
+                    </button>
+
+                    <button class="btn btn-danger">
+                        <i class="ace-icon fa fa-cogs"></i>
+                    </button>
+                </div>
+                
+                <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+                    <span class="btn btn-success"></span>
+
+                    <span class="btn btn-info"></span>
+
+                    <span class="btn btn-warning"></span>
+
+                    <span class="btn btn-danger"></span>
+                </div>
+            </div> <!-- .sidebar-shortcuts -->
+            
+            <ul class="nav nav-list">
+                <li class="">
+                    <a href="#">
+                        <i class="menu-icon fa fa-tachometer"></i>
+                        <span class="menu-text"> Dashboard </span>
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
+            </ul>
+
+        </div>
+        
+        
+
+        <div>
+            @RenderBody()
+        </div>
+        @Scripts.Render("~/bundle/jquery")
+        <script type="text/javascript">
+            if ('ontouchstart' in document.documentElement) document.write("<script src='~/BaseDesignAssets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+        </script>
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/ace")
+        @RenderSection("scripts", required:false)
+    </body>
 </html>
