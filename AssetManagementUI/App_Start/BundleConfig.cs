@@ -30,7 +30,7 @@ namespace AssetManagementUI
 
             // Css Bundle
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/site.css"));
+                "~/Content/Site.css"));
 
             bundles.Add(new StyleBundle("~/BaseDesign/css").Include(
                 "~/BaseDesignAssets/css/bootstrap.min.css",
